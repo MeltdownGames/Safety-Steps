@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool dragging;
+
+    private void Update()
     {
-        
+        Movement();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Movement()
     {
-        
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Collider2D[] hit = Physics2D.OverlapPointAll(mousePosition);
+        foreach (Collider2D col in hit)
+            if (col.gameObject == gameObject && Input.GetMouseButtonDown(0))
+                dragging = true;
+
+        if (dragging)
+        {
+            if (Input.GetMouseButtonUp(0))
+                dragging = false;
+
+            transform.position = mousePosition;
+        }
     }
 }
