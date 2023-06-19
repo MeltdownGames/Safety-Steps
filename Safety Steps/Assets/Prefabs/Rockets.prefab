@@ -93,6 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 999272874598269663}
+  - component: {fileID: 621302865776861162}
   m_Layer: 0
   m_Name: Rockets
   m_TagString: Untagged
@@ -121,6 +122,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &621302865776861162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658213775644224514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff491421e07c1b741ac314e4a0f35d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rocketPrefab: {fileID: 7335279261065293539, guid: 407c25089cb21ea43a324592a4745934, type: 3}
+  alerts:
+  - {fileID: 59166772442568663}
+  - {fileID: 7362516567630844754}
+  - {fileID: 6157199699663916946}
+  - {fileID: 4560234283820089987}
+  - {fileID: 3213642175423783537}
+  - {fileID: 8932548469106903276}
+  timer: 2.5
 --- !u!1 &3213642175423783537
 GameObject:
   m_ObjectHideFlags: 0
