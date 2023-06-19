@@ -5,12 +5,20 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
+    public static ObstacleSpawner Instance;
+
     public Transform obstacleHolder;
     public Transform[] corners;
+    public Transform[] rocketSpawns;
     
     public GameObject[] obstacles;
 
     private float timer;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Update()
     {
@@ -36,6 +44,9 @@ public class ObstacleSpawner : MonoBehaviour
                         -10,
                     };
                     newObstacle.transform.position = new Vector2(0, possibleYPositions[Random.Range(0, possibleYPositions.Count)]);
+                    break;
+                case "Rockets":
+                    newObstacle.transform.position = new Vector2();
                     break;
                 default:
                     Debug.LogError("Obstacle: " + newObstacle.name + " functionality not implemented.");
