@@ -19,6 +19,18 @@ public class Rockets : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
+        if (timer > 0)
+        {
+            for (int i = 0; i < alerts.Count; i++)
+            {
+                if (alerts[i] != null)
+                {
+                    Vector3 alertPos = ObstacleSpawner.Instance.rocketSpawns[i].transform.position;
+                    alerts[i].transform.position = new Vector3(alertPos.x, alertPos.y, 0);
+                }
+            }
+        }
+
         if (timer <= 0 && !rocketsSpawned)
         {
             foreach (GameObject alert in alerts)
