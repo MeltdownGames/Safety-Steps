@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     public static Player Instance;
 
+    public List<Transform> hitboxPositions = new List<Transform>();
+
     [HideInInspector] public Collider2D[] objectsOver;
 
     private bool dragging;
@@ -40,7 +42,7 @@ public class Player : MonoBehaviour
 
     void GetBlocksUnder()
     {
-        objectsOver = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0);
+        objectsOver = Physics2D.OverlapAreaAll(hitboxPositions[0].position, hitboxPositions[1].position);
     }
 
     public void Kill()
