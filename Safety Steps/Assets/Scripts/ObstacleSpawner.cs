@@ -40,10 +40,15 @@ public class ObstacleSpawner : MonoBehaviour
                 case "ScreenSlice":
                     List<float> possibleYPositions = new List<float>()
                     {
-                        10,
-                        -10,
+                        5,
+                        -5,
                     };
                     newObstacle.transform.position = new Vector2(0, possibleYPositions[Random.Range(0, possibleYPositions.Count)]);
+
+                    if (newObstacle.transform.position.y == 5)
+                        newObstacle.transform.rotation = Quaternion.Euler(0, 0, 180);
+                    else
+                        newObstacle.transform.rotation = Quaternion.Euler(0, 0, 0);
                     break;
                 case "Rockets":
                     newObstacle.transform.position = new Vector2();

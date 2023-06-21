@@ -15,7 +15,7 @@ public class HorizontalLaser : MonoBehaviour
             foreach (Collider2D obj in Player.Instance.objectsOver)
             {
                 if (obj.gameObject == gameObject)
-                    Player.Instance.Kill();
+                    Player.Instance.Kill(gameObject.name);
             }
 
             Destroy(gameObject);

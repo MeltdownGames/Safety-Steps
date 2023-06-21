@@ -59,7 +59,7 @@ public class Rockets : MonoBehaviour
 
                 foreach (Collider2D obj in Player.Instance.objectsOver)
                     if (obj.gameObject == rocket)
-                        Player.Instance.Kill();
+                        Player.Instance.Kill(gameObject.name);
             }
 
             if (timer <= 0)

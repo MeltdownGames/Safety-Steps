@@ -45,8 +45,8 @@ public class Player : MonoBehaviour
         objectsOver = Physics2D.OverlapAreaAll(hitboxPositions[0].position, hitboxPositions[1].position);
     }
 
-    public void Kill()
+    public void Kill(string objectName)
     {
-        print("Player Died");
+        print("Player Died: " + objectName);
     }
 }
