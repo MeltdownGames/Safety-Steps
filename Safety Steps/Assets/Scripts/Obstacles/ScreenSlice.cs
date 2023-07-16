@@ -68,10 +68,10 @@ public class ScreenSlice : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
-        foreach (Collider2D obj in Player.Instance.objectsOver)
+        /*foreach (Collider2D obj in Player.Instance.objectsOver)
         {
             if (obj.gameObject == obstacle.gameObject)
                 Player.Instance.Kill(obstacle.gameObject.name);
-        }
+        }*/
     }
 }

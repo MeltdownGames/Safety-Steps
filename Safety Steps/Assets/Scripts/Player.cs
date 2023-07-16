@@ -8,8 +8,6 @@ public class Player : MonoBehaviour
 
     public List<Transform> hitboxPositions = new List<Transform>();
 
-    [HideInInspector] public Collider2D[] objectsOver;
-
     private bool dragging;
 
     private void Awake()
@@ -20,7 +18,6 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Movement();
-        GetBlocksUnder();
     }
 
     void Movement()
@@ -40,13 +37,22 @@ public class Player : MonoBehaviour
         }
     }
 
-    void GetBlocksUnder()
-    {
-        objectsOver = Physics2D.OverlapAreaAll(hitboxPositions[0].position, hitboxPositions[1].position);
-    }
-
     public void Kill(string objectName)
     {
-        print("Player Died: " + objectName);
+        PlayerData.SaveScore(MainUI.Instance.score);
+        DeathScreen.Instance.PlayerDied();
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        print(collision.GetComponent<Obstacle>());
+        if (collision.GetComponent<Obstacle>() != null)
+        {
+            if (!collision.GetComponent<Obstacle>().Active)
+                return;
+
+            print(collision.gameObject.name);
+            Kill(collision.gameObject.name);
+        }
     }
 }

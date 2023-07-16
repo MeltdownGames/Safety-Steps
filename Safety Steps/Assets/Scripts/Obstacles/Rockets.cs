@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class Rockets : MonoBehaviour
 {
@@ -56,10 +54,6 @@ public class Rockets : MonoBehaviour
             foreach (GameObject rocket in rockets)
             {
                 rocket.transform.position += (rocket.transform.up * 6) * Time.deltaTime;
-
-                foreach (Collider2D obj in Player.Instance.objectsOver)
-                    if (obj.gameObject == rocket)
-                        Player.Instance.Kill(gameObject.name);
             }
 
             if (timer <= 0)

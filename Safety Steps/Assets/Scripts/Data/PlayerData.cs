@@ -40,4 +40,31 @@ public static class PlayerData
             return false;
         }
     }
+
+    public static void LoadScore()
+    {
+        string path = Application.persistentDataPath + "/score.ss";
+        if (File.Exists(path))
+        {
+            try
+            {
+                string dataToLoad_ = "";
+                using (FileStream stream = new FileStream(path, FileMode.Open))
+                {
+                    using (StreamReader reader = new StreamReader(stream))
+                    {
+                        dataToLoad_ = reader.ReadToEnd();
+                    }
+                }
+
+                string score = AesOperation.DecryptString(dataToLoad_);
+
+                highscore = float.Parse(score);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError("Error occured when trying to load data from file: " + path + "\n" + e);
+            }
+        }
+    }
 }
