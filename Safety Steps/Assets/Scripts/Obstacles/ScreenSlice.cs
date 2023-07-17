@@ -46,6 +46,8 @@ public class ScreenSlice : MonoBehaviour
 
     IEnumerator MoveIntoPosition()
     {
+        CameraZoom.Instance.StartZoom(2.5f, 1f);
+
         timer = 2.5f;
         bool top = obstacle.position.y == 17 ? true : false;
         float newY = top ? 5 : -5;
