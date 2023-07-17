@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     private bool dragging;
 
+    private bool dead;
+
     private void Awake()
     {
         Instance = this;
@@ -41,11 +43,12 @@ public class Player : MonoBehaviour
     {
         PlayerData.SaveScore(MainUI.Instance.score);
         DeathScreen.Instance.PlayerDied();
+        dead = true;
     }
 
     public void TestKill(GameObject killObject)
     {
-        if (objectsOver.Count == 0)
+        if (objectsOver.Count == 0 || dead)
             return;
 
         foreach (GameObject objOver in objectsOver)

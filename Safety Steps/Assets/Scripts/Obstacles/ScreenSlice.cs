@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using UnityEngine;
 
 public class ScreenSlice : MonoBehaviour
@@ -18,13 +19,14 @@ public class ScreenSlice : MonoBehaviour
     {
         firstPos = obstacle.position;
         spriteRenderer = obstacle.GetComponent<SpriteRenderer>();
+        obstacle.transform.rotation = warning.position.y == 5 ? Quaternion.Euler(0, 0, 180) : Quaternion.Euler(0, 0, 0);
+
         StartCoroutine(StartWarning());
     }
 
     IEnumerator StartWarning()
     {
         bool top = warning.position.y == 5 ? true : false;
-        spriteRenderer.flipY = top;
         float newY = top ? 5 : -5;
         Vector3 newPosition = new Vector3(warning.position.x, newY);
         while (timer > 0)
@@ -44,12 +46,12 @@ public class ScreenSlice : MonoBehaviour
 
     IEnumerator MoveIntoPosition()
     {
-        bool top = obstacle.position.y == 5 ? true : false;
-        spriteRenderer.flipY = top;
+        timer = 2.5f;
+        bool top = obstacle.position.y == 17 ? true : false;
         float newY = top ? 5 : -5;
         while (timer > 0) 
         {
-            obstacle.localPosition = Vector3.Lerp(obstacle.position, new Vector2(0, 0), Time.deltaTime * moveSpeed);
+            obstacle.position = Vector3.Lerp(obstacle.position, new Vector2(0, newY), Time.deltaTime * moveSpeed);
             yield return new WaitForEndOfFrame();
         }
 
@@ -68,10 +70,6 @@ public class ScreenSlice : MonoBehaviour
     {
         timer -= Time.deltaTime;
 
-        /*foreach (Collider2D obj in Player.Instance.objectsOver)
-        {
-            if (obj.gameObject == obstacle.gameObject)
-                Player.Instance.Kill(obstacle.gameObject.name);
-        }*/
+        Player.Instance.TestKill(obstacle.gameObject);
     }
 }
