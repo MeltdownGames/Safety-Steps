@@ -12,6 +12,7 @@ public class HorizontalLaser : MonoBehaviour
 
         if (timer <= 0)
         {
+            ScreenShake.Instance.StartShake(.5f, .05f);
             Player.Instance.TestKill(gameObject);
             Destroy(gameObject);
         }

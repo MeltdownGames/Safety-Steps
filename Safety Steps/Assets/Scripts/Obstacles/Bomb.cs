@@ -12,6 +12,7 @@ public class Bomb : MonoBehaviour
 
         if (timer <= 0)
         {
+            ScreenShake.Instance.StartShake(.3f, .1f);
             Player.Instance.TestKill(gameObject);
             Destroy(gameObject);
         }
