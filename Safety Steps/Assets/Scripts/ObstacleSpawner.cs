@@ -26,6 +26,9 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void Update()
     {
+        if (Player.Instance.dead)
+            return;
+
         timer += Time.deltaTime;
 
         if (timer > spawnTimer)

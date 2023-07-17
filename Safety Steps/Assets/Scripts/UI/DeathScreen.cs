@@ -38,9 +38,7 @@ public class DeathScreen : MonoBehaviour
 
     public void Menu()
     {
-        Debug.LogError("Menu functionality not finished in code yet."); // remove
-        return; // remove
-        SceneManager.LoadScene("Menu", LoadSceneMode.Single); // rename to whatever the menu is now
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
         open = false;
     }
 

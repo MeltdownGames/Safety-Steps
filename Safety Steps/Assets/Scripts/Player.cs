@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -10,7 +12,7 @@ public class Player : MonoBehaviour
 
     private bool dragging;
 
-    private bool dead;
+    [HideInInspector] public bool dead { get; private set; }
 
     private void Awake()
     {
@@ -44,6 +46,7 @@ public class Player : MonoBehaviour
         PlayerData.SaveScore(MainUI.Instance.score);
         DeathScreen.Instance.PlayerDied();
         dead = true;
+        gameObject.SetActive(false);
     }
 
     public void TestKill(GameObject killObject)
@@ -51,7 +54,7 @@ public class Player : MonoBehaviour
         if (objectsOver.Count == 0 || dead)
             return;
 
-        foreach (GameObject objOver in objectsOver)
+        foreach (GameObject objOver in objectsOver.ToList())
             if (objOver.gameObject == killObject)
             {
                 print("Killing from: " + killObject.name); // remove later

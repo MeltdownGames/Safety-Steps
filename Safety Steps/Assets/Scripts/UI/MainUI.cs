@@ -18,7 +18,8 @@ public class MainUI : MonoBehaviour
 
     private void Update()
     {
-        score += Time.deltaTime;
+        if (!Player.Instance.dead)
+            score += Time.deltaTime;
 
         scoreText.text = "Score: " + Mathf.FloorToInt(score).ToString();
         highscoreText.text = "Highscore: " + Mathf.FloorToInt(PlayerData.highscore).ToString();
