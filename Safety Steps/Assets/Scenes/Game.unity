@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790dca230fa9f27459dc61742daedb1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnTimer: 1.5
   obstacleHolder: {fileID: 338767208}
   corners:
   - {fileID: 1387327328}
@@ -505,7 +506,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -1565258925
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &176996182
 RectTransform:
@@ -1511,10 +1512,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b29179ec4391824a93c9e52817cb108, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitboxPositions:
-  - {fileID: 835869709}
-  - {fileID: 1444100362}
-  objectsOver: []
 --- !u!95 &712121924
 Animator:
   serializedVersion: 5
