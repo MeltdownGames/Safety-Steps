@@ -71,6 +71,12 @@ public class ObstacleSpawner : MonoBehaviour
                     obsType = ObstacleType.ScreenSlice;
                     break;
                 case "Rockets":
+                    if (RuleChecks(ObstacleType.ScreenSlice))
+                    {
+                        Destroy(newObstacle);
+                        return;
+                    }
+
                     newObstacle.transform.position = new Vector2();
                     obsType = ObstacleType.Rockets;
                     break;
@@ -101,9 +107,12 @@ public class ObstacleSpawner : MonoBehaviour
             case ObstacleType.ScreenSlice:
                 foreach (Obstacle obs in activeObstacles)
                     if (obs.type == ObstacleType.ScreenSlice)
-                    {
                         cantSpawn = true;
-                    }
+                break;
+            case ObstacleType.Rockets:
+                foreach (Obstacle obs in activeObstacles)
+                    if (obs.type == ObstacleType.Rockets)
+                        cantSpawn = true;
                 break;
         }
 
