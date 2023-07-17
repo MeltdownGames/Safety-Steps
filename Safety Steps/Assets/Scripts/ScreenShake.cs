@@ -15,9 +15,12 @@ public class ScreenShake : MonoBehaviour
     private float shakePower;
     private float shakeRotation;
 
+    private Vector3 startPos;
+
     private void Awake()
     {
         Instance = this;
+        startPos = transform.position;
     }
 
     public void StartShake(float length, float power)
@@ -31,6 +34,11 @@ public class ScreenShake : MonoBehaviour
     }
 
     private void Update()
+    {
+        transform.position = startPos;
+    }
+
+    private void LateUpdate()
     {
         if (!shakeEnabled)
             return;
