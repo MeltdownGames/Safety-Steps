@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public static Player Instance;
 
-    public List<Transform> hitboxPositions = new List<Transform>();
+    private List<GameObject> objectsOver = new List<GameObject>();
 
     private bool dragging;
 
@@ -43,16 +43,34 @@ public class Player : MonoBehaviour
         DeathScreen.Instance.PlayerDied();
     }
 
+    public void TestKill(GameObject killObject)
+    {
+        if (objectsOver.Count == 0)
+            return;
+
+        foreach (GameObject objOver in objectsOver)
+            if (objOver.gameObject == killObject)
+            {
+                print("Killing from: " + killObject.name); // remove later
+                Kill(killObject.name);
+            }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!objectsOver.Contains(collision.gameObject))
+            objectsOver.Add(collision.gameObject);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (objectsOver.Contains(collision.gameObject))
+            objectsOver.Remove(collision.gameObject);
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-        print(collision.GetComponent<Obstacle>());
-        if (collision.GetComponent<Obstacle>() != null)
-        {
-            if (!collision.GetComponent<Obstacle>().Active)
-                return;
-
-            print(collision.gameObject.name);
-            Kill(collision.gameObject.name);
-        }
+        if (!objectsOver.Contains(collision.gameObject))
+            objectsOver.Add(collision.gameObject);
     }
 }

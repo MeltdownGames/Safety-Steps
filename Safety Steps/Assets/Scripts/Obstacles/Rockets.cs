@@ -54,6 +54,8 @@ public class Rockets : MonoBehaviour
             foreach (GameObject rocket in rockets)
             {
                 rocket.transform.position += (rocket.transform.up * 6) * Time.deltaTime;
+
+                Player.Instance.TestKill(rocket);
             }
 
             if (timer <= 0)

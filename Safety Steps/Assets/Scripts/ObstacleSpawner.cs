@@ -7,6 +7,8 @@ public class ObstacleSpawner : MonoBehaviour
 {
     public static ObstacleSpawner Instance;
 
+    public float spawnTimer = 1.5f;
+
     public Transform obstacleHolder;
     public Transform[] corners;
     public Transform[] rocketSpawns;
@@ -24,7 +26,7 @@ public class ObstacleSpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 1.5f)
+        if (timer > spawnTimer)
         {
             GameObject newObstacle = Instantiate(obstacles[Random.Range(0, obstacles.Length)], obstacleHolder);
             newObstacle.name = newObstacle.name.Replace("(Clone)", string.Empty);

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8920845506459523892}
   - component: {fileID: 8211484376178609468}
-  - component: {fileID: -1810215818135011181}
-  - component: {fileID: 1819554580219356710}
   - component: {fileID: -1090525580846918638}
+  - component: {fileID: 2242033803052618627}
+  - component: {fileID: 4985690240889962469}
   m_Layer: 0
   m_Name: Bomb
   m_TagString: Untagged
@@ -87,23 +87,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &-1810215818135011181
-CircleCollider2D:
+--- !u!114 &-1090525580846918638
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2277484822600229171}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!50 &1819554580219356710
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c39c10aa1f9e04ca394904dea6a6cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 2.5
+--- !u!50 &2242033803052618627
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -124,17 +121,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-1090525580846918638
-MonoBehaviour:
+--- !u!58 &4985690240889962469
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2277484822600229171}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02c39c10aa1f9e04ca394904dea6a6cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Active: 0
-  timer: 2.5
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

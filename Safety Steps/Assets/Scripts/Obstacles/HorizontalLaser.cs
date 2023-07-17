@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HorizontalLaser : Obstacle
+public class HorizontalLaser : MonoBehaviour
 {
     public float timer = 2.5f;
 
@@ -12,14 +12,8 @@ public class HorizontalLaser : Obstacle
 
         if (timer <= 0)
         {
-            StartCoroutine(EnableAndDestroy());
-            IEnumerator EnableAndDestroy()
-            {
-                Active = true;
-                yield return new WaitForEndOfFrame();
-                Active = false;
-                Destroy(gameObject);
-            }
+            Player.Instance.TestKill(gameObject);
+            Destroy(gameObject);
         }
     }
 }
