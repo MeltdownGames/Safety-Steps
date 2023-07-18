@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -48,5 +49,11 @@ public class DeathScreen : MonoBehaviour
     {
         open = true;
         deathMessage.Play();
+        Leaderboard.Instance.UpdateUserScore();
+    }
+
+    public void OpenClose(bool _open)
+    {
+        open = _open;
     }
 }
