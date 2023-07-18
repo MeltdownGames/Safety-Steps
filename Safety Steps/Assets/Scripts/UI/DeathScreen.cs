@@ -11,6 +11,7 @@ public class DeathScreen : MonoBehaviour
     public float openSpeed = 5f;
 
     private CanvasGroup cg;
+    private AudioSource deathMessage;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class DeathScreen : MonoBehaviour
     private void Start()
     {
         cg = GetComponent<CanvasGroup>();
+        deathMessage = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -45,5 +47,6 @@ public class DeathScreen : MonoBehaviour
     public void PlayerDied()
     {
         open = true;
+        deathMessage.Play();
     }
 }

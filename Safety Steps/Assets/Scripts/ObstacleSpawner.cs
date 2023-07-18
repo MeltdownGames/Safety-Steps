@@ -1,6 +1,6 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
@@ -15,13 +15,30 @@ public class ObstacleSpawner : MonoBehaviour
     
     public GameObject[] obstacles;
 
+    public AudioSource startMessageAudio;
+
     private List<Obstacle> activeObstacles = new List<Obstacle>();
 
     private float timer;
 
+    private bool pauseSpawning = false;
+
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        pauseSpawning = true;
+
+        StartCoroutine(_Start());
+        IEnumerator _Start()
+        {
+            startMessageAudio.Play();
+            yield return new WaitUntil(() => startMessageAudio.isPlaying == false);
+            pauseSpawning = false;
+        }
     }
 
     private void Update()
