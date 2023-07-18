@@ -45,7 +45,7 @@ public class Leaderboard : MonoBehaviour
             if (playerItem.gameObject != playerPrefab)
                 Destroy(playerItem.gameObject);
 
-        Task<QuerySnapshot> scores = FirebaseManagement.firestoreReference.Collection("Scores").OrderBy("score").Limit(10).GetSnapshotAsync();
+        Task<QuerySnapshot> scores = FirebaseManagement.firestoreReference.Collection("Scores").OrderByDescending("score").Limit(10).GetSnapshotAsync();
         await scores;
         if (!scores.IsCompletedSuccessfully)
             return;
