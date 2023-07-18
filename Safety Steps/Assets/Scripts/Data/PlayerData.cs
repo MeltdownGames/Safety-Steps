@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using Newtonsoft.Json;
+using Firebase.Firestore;
+using System.Threading.Tasks;
 
 public static class PlayerData
 {
@@ -98,7 +100,7 @@ public static class PlayerData
         }
     }
 
-    public static void LoadPlayerData()
+    public async static void LoadPlayerData()
     {
         string path = Application.persistentDataPath + "/player.ss";
         if (File.Exists(path))
@@ -117,8 +119,8 @@ public static class PlayerData
                 string json = AesOperation.DecryptString(dataToLoad_);
 
                 Dictionary<string, object> playerData = JsonConvert.DeserializeObject<Dictionary<string, object>>(json);
-                playerID = (int)playerData["id"];
-                playerName = (string)playerData["name"];
+                playerID = int.Parse(playerData["id"].ToString());
+                playerName = playerData["name"].ToString();
             }
             catch (Exception e)
             {
@@ -128,6 +130,23 @@ public static class PlayerData
         else
         {
             // get new player ID and random name
+            Task<QuerySnapshot> _playerCount = FirebaseManagement.firestoreReference.Collection("Players").GetSnapshotAsync();
+            await _playerCount;
+            if (!_playerCount.IsCompletedSuccessfully)
+                return;
+
+            int playerCount = _playerCount.Result.Count + 1;
+            string _playerName = "Player " + UnityEngine.Random.Range(0, 999999);
+
+            Dictionary<string, object> playerData = new Dictionary<string, object>();
+            playerData.Add("id", playerCount);
+            playerData.Add("name", _playerName);
+
+            Task<DocumentReference> playerAdd = FirebaseManagement.firestoreReference.Collection("Players").AddAsync(playerData);
+            await playerAdd;
+
+            playerID = playerCount;
+            playerName = _playerName;
 
             SavePlayerData();
         }
