@@ -56,4 +56,9 @@ public class FirebaseManagement : MonoBehaviour
     {
         return new Dictionary<string, object>();
     }
+
+    private void OnApplicationQuit()
+    {
+        firebaseAuth.CurrentUser.DeleteAsync();
+    }
 }
