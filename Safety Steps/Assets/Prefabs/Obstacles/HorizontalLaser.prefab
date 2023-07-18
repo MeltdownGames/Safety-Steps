@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c38521b8d85c0045bf51af832b928b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffect: {fileID: 895587902382501464, guid: 9111a620c5dea9b4d8aeca8d6412f780, type: 3}
   timer: 2.5
 --- !u!50 &4739167621175353027
 Rigidbody2D:

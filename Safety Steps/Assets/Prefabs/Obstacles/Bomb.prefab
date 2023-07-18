@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionParticles: {fileID: 1667772374841551448, guid: 16e8b849a1d5bcf4d8cd6e3053adcebe, type: 3}
+  soundEffect: {fileID: 895587902382501464, guid: a856ee3a128c76a489aafc791ccdeb2d, type: 3}
   timer: 2.5
 --- !u!50 &2242033803052618627
 Rigidbody2D:

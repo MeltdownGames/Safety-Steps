@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bomb : MonoBehaviour
 {
     public GameObject explosionParticles;
+    public GameObject soundEffect;
 
     public float timer = 2.5f;
 
@@ -19,6 +20,9 @@ public class Bomb : MonoBehaviour
 
             GameObject particles = Instantiate(explosionParticles, transform.position, transform.rotation);
             Destroy(particles, 2.5f);
+
+            GameObject sound = Instantiate(soundEffect, transform.position, transform.rotation);
+            Destroy(sound, sound.GetComponent<AudioSource>().clip.length);
 
             Destroy(gameObject);
         }

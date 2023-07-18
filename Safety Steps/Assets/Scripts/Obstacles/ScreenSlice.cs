@@ -12,6 +12,7 @@ public class ScreenSlice : MonoBehaviour
     public Transform obstacle;
 
     private SpriteRenderer spriteRenderer;
+    private AudioSource grindSound;
 
     private Vector2 firstPos;
 
@@ -19,6 +20,7 @@ public class ScreenSlice : MonoBehaviour
     {
         firstPos = obstacle.position;
         spriteRenderer = obstacle.GetComponent<SpriteRenderer>();
+        grindSound = obstacle.GetComponent<AudioSource>();
         obstacle.transform.rotation = warning.position.y == 5 ? Quaternion.Euler(0, 0, 180) : Quaternion.Euler(0, 0, 0);
 
         StartCoroutine(StartWarning());
@@ -47,6 +49,7 @@ public class ScreenSlice : MonoBehaviour
     IEnumerator MoveIntoPosition()
     {
         CameraZoom.Instance.StartZoom(2.5f, 1f);
+        grindSound.Play();
 
         timer = 2.5f;
         bool top = obstacle.position.y == 17 ? true : false;
@@ -59,6 +62,7 @@ public class ScreenSlice : MonoBehaviour
 
         timer = 2.5f;
 
+        grindSound.Play();
         while (timer > 0)
         {
             obstacle.position = Vector3.Lerp(obstacle.position, firstPos, Time.deltaTime * moveSpeed);

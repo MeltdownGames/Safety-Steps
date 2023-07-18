@@ -14,9 +14,16 @@ public class Player : MonoBehaviour
 
     [HideInInspector] public bool dead { get; private set; }
 
+    private AudioSource clickSound;
+
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        clickSound = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -30,12 +37,18 @@ public class Player : MonoBehaviour
         Collider2D[] hit = Physics2D.OverlapPointAll(mousePosition);
         foreach (Collider2D col in hit)
             if (col.gameObject == gameObject && Input.GetMouseButtonDown(0))
+            {
                 dragging = true;
+                clickSound.Play();
+            }
 
         if (dragging)
         {
             if (Input.GetMouseButtonUp(0))
+            {
                 dragging = false;
+                clickSound.Play();
+            }
 
             transform.position = mousePosition;
         }
