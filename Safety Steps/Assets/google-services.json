@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "219056795761",
+    "project_id": "safety-steps",
+    "storage_bucket": "safety-steps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219056795761:android:9cb5a638c1595165c3ebd0",
+        "android_client_info": {
+          "package_name": "com.meltdowngames.safetysteps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219056795761-ujvfn8k7u7nd4u0qj64kk8tdqupljdlk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaXq7VUpgPllB_Ks5VnRTw198jzPuPD74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "219056795761-ujvfn8k7u7nd4u0qj64kk8tdqupljdlk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
