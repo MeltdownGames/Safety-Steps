@@ -13,7 +13,6 @@ public class MainUI : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        PlayerData.LoadScore();
     }
 
     private void Update()

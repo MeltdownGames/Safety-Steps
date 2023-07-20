@@ -16,7 +16,20 @@ public static class PlayerData
 
     public static bool SaveScore(float score)
     {
-        string fullPath = Path.Combine(Application.persistentDataPath, "score.ss");
+        string fullPath = "";
+        switch (ObstacleSpawner.currentGamemode)
+        {
+            case GamemodeType.Highscore:
+                fullPath = Path.Combine(Application.persistentDataPath, "score_highscore.ss");
+                break;
+            case GamemodeType.Easy:
+                fullPath = Path.Combine(Application.persistentDataPath, "score_easy.ss");
+                break;
+            case GamemodeType.Hardcore:
+                fullPath = Path.Combine(Application.persistentDataPath, "score_hardcore.ss");
+                break;
+        }
+
         try
         {
             bool isScoreHigher = score > highscore;
@@ -48,7 +61,20 @@ public static class PlayerData
 
     public static void LoadScore()
     {
-        string path = Application.persistentDataPath + "/score.ss";
+        string path = "";
+        switch (ObstacleSpawner.currentGamemode)
+        {
+            case GamemodeType.Highscore:
+                path = Application.persistentDataPath + "/score_highscore.ss";
+                break;
+            case GamemodeType.Easy:
+                path = Application.persistentDataPath + "/score_easy.ss";
+                break;
+            case GamemodeType.Hardcore:
+                path = Application.persistentDataPath + "/score_hardcore.ss";
+                break;
+        }
+
         if (File.Exists(path))
         {
             try

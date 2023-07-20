@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/HighScoreMode_Backup.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/HighScoreMode.unity
+    path: Assets/Scenes/Game.unity
     guid: 832ddf99688870144aae5441d9f51b27
   m_configObjects: {}

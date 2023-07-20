@@ -7,6 +7,9 @@ public class ObstacleSpawner : MonoBehaviour
 {
     public static ObstacleSpawner Instance;
 
+    public List<Gamemode> gamemodes = new List<Gamemode>();
+    public static GamemodeType currentGamemode;
+
     public float spawnTimer = 1.5f;
 
     public Transform obstacleHolder;
@@ -30,6 +33,10 @@ public class ObstacleSpawner : MonoBehaviour
 
     private void Start()
     {
+        PlayerData.LoadScore();
+
+        GamemodeInitiliazing();
+
         pauseSpawning = true;
 
         StartCoroutine(_Start());
@@ -39,6 +46,15 @@ public class ObstacleSpawner : MonoBehaviour
             yield return new WaitUntil(() => startMessageAudio.isPlaying == false);
             pauseSpawning = false;
         }
+    }
+
+    void GamemodeInitiliazing()
+    {
+        foreach (Gamemode gamemode in gamemodes)
+            if (gamemode.type == currentGamemode)
+            {
+                spawnTimer = gamemode.spawnSpeed;
+            }
     }
 
     private void Update()

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0264a8851b4a21a4b9359c4686819c0f, type: 3}
+  m_Name: Highscore
+  m_EditorClassIdentifier: 
+  visibleName: Highscore
+  description: Try to keep Timmy alive as long as possible and get a good score.
+    Your highest score will be displayed to the online leaderboard for all too see!
+  type: 1
+  spawnSpeed: 1.5
