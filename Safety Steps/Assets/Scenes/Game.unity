@@ -802,7 +802,17 @@ MonoBehaviour:
   - {fileID: 1923786045}
   - {fileID: 1663157855}
   - {fileID: 288651964}
-  fans: []
+  fans:
+  - {fileID: 807094506}
+  - {fileID: 870357953}
+  - {fileID: 1709280638}
+  - {fileID: 1827182707}
+  - {fileID: 1316997373}
+  - {fileID: 532229598}
+  - {fileID: 793036952}
+  - {fileID: 34866221}
+  - {fileID: 56252837}
+  - {fileID: 962672003}
   obstacles:
   - {fileID: 2956595464842790896, guid: 8983bc39f03e3d5499afa2abf1329fce, type: 3}
   - {fileID: 2277484822600229171, guid: 7cb1d61a85a02cf419e86d9cc4a78503, type: 3}
