@@ -439,6 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790dca230fa9f27459dc61742daedb1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamemodes: []
   spawnTimer: 1.5
   obstacleHolder: {fileID: 338767208}
   corners:
@@ -3339,6 +3340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerListContent: {fileID: 1673144792}
   playerPrefab: {fileID: 403463710}
+  leaderboardNameText: {fileID: 1964007532}
   lerpOpen: 0
   openSpeed: 5
 --- !u!225 &1450555514
@@ -4045,7 +4047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 71.31302, y: -175.98}
+  m_AnchoredPosition: {x: 71.31305, y: -175.97998}
   m_SizeDelta: {x: -1034.7, y: 145.93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1964007532
