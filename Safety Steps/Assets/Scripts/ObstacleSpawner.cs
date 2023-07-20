@@ -15,6 +15,7 @@ public class ObstacleSpawner : MonoBehaviour
     public Transform obstacleHolder;
     public Transform[] corners;
     public Transform[] rocketSpawns;
+    public List<GameObject> fans;
     
     public GameObject[] obstacles;
 
@@ -112,6 +113,11 @@ public class ObstacleSpawner : MonoBehaviour
 
                     newObstacle.transform.position = new Vector2();
                     obsType = ObstacleType.Rockets;
+                    break;
+                case "Fan":
+                    Destroy(newObstacle);
+                    GameObject randomFan = fans[Random.Range(0, fans.Count)];
+                    randomFan.GetComponent<Fan>().Open();
                     break;
                 default:
                     Debug.LogError("Obstacle: " + newObstacle.name + " functionality not implemented.");

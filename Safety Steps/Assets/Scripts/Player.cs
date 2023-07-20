@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
 
     private AudioSource clickSound;
 
+    private Vector2 offset;
+
     private void Awake()
     {
         Instance = this;
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour
         foreach (Collider2D col in hit)
             if (col.gameObject == gameObject && Input.GetMouseButtonDown(0))
             {
+                offset = new Vector2();
                 dragging = true;
                 clickSound.Play();
             }
@@ -50,8 +53,10 @@ public class Player : MonoBehaviour
                 clickSound.Play();
             }
 
-            transform.position = mousePosition;
+            transform.position = mousePosition + offset;
         }
+
+        CheckFan();
     }
 
     public void Kill(string objectName)
@@ -73,6 +78,16 @@ public class Player : MonoBehaviour
                 print("Killing from: " + killObject.name); // remove later
                 Kill(killObject.name);
             }
+    }
+
+    void CheckFan()
+    {
+        Vector2 positionChange = new Vector2();
+        foreach (GameObject objOver in objectsOver.ToList())
+            if (ObstacleSpawner.Instance.fans.Contains(objOver))
+                positionChange += new Vector2(0, objOver.GetComponent<Fan>().up ? -1.0f : 1.0f);
+
+        offset += positionChange * Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
