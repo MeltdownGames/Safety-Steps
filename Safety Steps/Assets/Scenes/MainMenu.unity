@@ -325,7 +325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -624, y: -403}
+  m_AnchoredPosition: {x: -623.99994, y: -403}
   m_SizeDelta: {x: -1008.07, y: 166.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &87218984
@@ -2583,6 +2583,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1feae3b5e0c1349aab61c724d059a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  modeSelectionUI: {fileID: 1870347543}
+  canvasGroup: {fileID: 1153397435}
+  openSpeed: 2.5
 --- !u!328 &1153397434
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -3580,7 +3583,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -624, y: -236}
+  m_AnchoredPosition: {x: -623.99994, y: -236}
   m_SizeDelta: {x: -1507.21, y: 99.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1829510692
@@ -3923,6 +3926,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d44a4e0dc2a2a747902559dac76df80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuUI: {fileID: 1153397433}
+  canvasGroup: {fileID: 1870347544}
+  informationPanel: {fileID: 1054732218}
+  informationText: {fileID: 330609870}
+  informationPanelOpenSpeed: 5
+  openSpeed: 2.5
 --- !u!225 &1870347544
 CanvasGroup:
   m_ObjectHideFlags: 0
