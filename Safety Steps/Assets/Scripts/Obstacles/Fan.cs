@@ -33,6 +33,6 @@ public class Fan : MonoBehaviour
     public void Open()
     {
         open = true;
-        timer = 4f;
+        timer = 3f;
     }
 }
