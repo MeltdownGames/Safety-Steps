@@ -296,7 +296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -211.15, y: -44}
+  m_AnchoredPosition: {x: -211.14996, y: -44}
   m_SizeDelta: {x: 3.02, y: 3.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &34866223
@@ -311,6 +311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2bb3f09e0d33a489e7242885f7e5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  up: 1
+  strength: 1
 --- !u!61 &34866224
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -484,6 +486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2bb3f09e0d33a489e7242885f7e5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  up: 1
+  strength: 1
 --- !u!61 &56252840
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -785,6 +789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790dca230fa9f27459dc61742daedb1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamemodes: []
   spawnTimer: 1.5
   obstacleHolder: {fileID: 338767208}
   corners:
@@ -797,6 +802,7 @@ MonoBehaviour:
   - {fileID: 1923786045}
   - {fileID: 1663157855}
   - {fileID: 288651964}
+  fans: []
   obstacles:
   - {fileID: 2956595464842790896, guid: 8983bc39f03e3d5499afa2abf1329fce, type: 3}
   - {fileID: 2277484822600229171, guid: 7cb1d61a85a02cf419e86d9cc4a78503, type: 3}
@@ -1829,7 +1835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 218.15, y: -44}
+  m_AnchoredPosition: {x: 218.14996, y: -44}
   m_SizeDelta: {x: 3.02, y: 3.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532229600
@@ -1844,6 +1850,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2bb3f09e0d33a489e7242885f7e5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  up: 1
+  strength: 1
 --- !u!61 &532229601
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3013,6 +3021,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2bb3f09e0d33a489e7242885f7e5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  up: 1
+  strength: 1
 --- !u!61 &793036955
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3259,6 +3269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2bb3f09e0d33a489e7242885f7e5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  up: 1
+  strength: 1
 --- !u!61 &807094511
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3390,6 +3402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2bb3f09e0d33a489e7242885f7e5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  up: 1
+  strength: 1
 --- !u!61 &870357956
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3612,6 +3626,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2bb3f09e0d33a489e7242885f7e5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  up: 1
+  strength: 1
 --- !u!61 &962672005
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4122,6 +4138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2bb3f09e0d33a489e7242885f7e5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  up: 1
+  strength: 1
 --- !u!61 &1316997376
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4618,6 +4636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerListContent: {fileID: 1673144792}
   playerPrefab: {fileID: 403463710}
+  leaderboardNameText: {fileID: 1964007532}
   lerpOpen: 0
   openSpeed: 5
 --- !u!225 &1450555514
@@ -5156,6 +5175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2bb3f09e0d33a489e7242885f7e5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  up: 1
+  strength: 1
 --- !u!61 &1709280641
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5479,6 +5500,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc2bb3f09e0d33a489e7242885f7e5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  up: 1
+  strength: 1
 --- !u!61 &1827182710
 BoxCollider2D:
   m_ObjectHideFlags: 0
