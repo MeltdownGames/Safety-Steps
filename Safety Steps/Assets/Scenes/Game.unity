@@ -789,7 +789,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790dca230fa9f27459dc61742daedb1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamemodes: []
+  gamemodes:
+  - {fileID: 11400000, guid: de558253eae647b409bc67d9377f5242, type: 2}
+  - {fileID: 11400000, guid: 4fd3b6ac9d2fabe4891d47b9961d01ce, type: 2}
+  - {fileID: 11400000, guid: e680fc39974bfd843b68c0f4662b2783, type: 2}
   spawnTimer: 1.5
   obstacleHolder: {fileID: 338767208}
   corners:

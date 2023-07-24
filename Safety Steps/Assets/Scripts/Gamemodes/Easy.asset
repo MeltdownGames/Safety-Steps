@@ -15,4 +15,6 @@ MonoBehaviour:
   visibleName: Easy
   description: An easier version of the base game.
   type: 2
-  spawnSpeed: 2
+  startSpawnSpeed: 1.5
+  endSpawnSpeed: 1
+  spawnSpeedupRate: 0.25

@@ -8,7 +8,9 @@ public class Gamemode : ScriptableObject
     public string visibleName = "Example Gamemode";
     [TextArea] public string description = "Example Description";
     public GamemodeType type = GamemodeType.None;
-    public float spawnSpeed = 1.5f;
+    public float startSpawnSpeed = 1.5f;
+    public float endSpawnSpeed = 1f;
+    public float spawnSpeedupRate = 1f;
 }
 
 public enum GamemodeType 

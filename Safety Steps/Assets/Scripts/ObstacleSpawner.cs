@@ -24,6 +24,8 @@ public class ObstacleSpawner : MonoBehaviour
     private List<Obstacle> activeObstacles = new List<Obstacle>();
 
     private float timer;
+    private float endTimer;
+    private float speedupRate;
 
     private bool pauseSpawning = false;
 
@@ -54,7 +56,9 @@ public class ObstacleSpawner : MonoBehaviour
         foreach (Gamemode gamemode in gamemodes)
             if (gamemode.type == currentGamemode)
             {
-                spawnTimer = gamemode.spawnSpeed;
+                spawnTimer = gamemode.startSpawnSpeed;
+                endTimer = gamemode.endSpawnSpeed;
+                speedupRate = gamemode.spawnSpeedupRate;
             }
     }
 
@@ -64,6 +68,8 @@ public class ObstacleSpawner : MonoBehaviour
             return;
 
         timer += Time.deltaTime;
+
+        spawnTimer = Mathf.Lerp(spawnTimer, endTimer, Time.deltaTime * speedupRate / 15);
 
         if (timer > spawnTimer)
         {

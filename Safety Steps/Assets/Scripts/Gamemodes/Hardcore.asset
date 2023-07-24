@@ -15,4 +15,6 @@ MonoBehaviour:
   visibleName: Rage
   description: A much harder version of the base game.
   type: 3
-  spawnSpeed: 0.5
+  startSpawnSpeed: 0.5
+  endSpawnSpeed: 0.25
+  spawnSpeedupRate: 0.5

@@ -16,4 +16,6 @@ MonoBehaviour:
   description: Try to keep Timmy alive as long as possible and get a good score.
     Your highest score will be displayed to the online leaderboard for all too see!
   type: 1
-  spawnSpeed: 1.5
+  startSpawnSpeed: 1.5
+  endSpawnSpeed: 0.75
+  spawnSpeedupRate: 1
