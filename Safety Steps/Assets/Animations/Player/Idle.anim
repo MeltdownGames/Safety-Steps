@@ -21,7 +21,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.058608346, y: 0.050667148, z: 0.19669753}
+        value: {x: 0.3080372, y: 0.31933603, z: 0.19669753}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -36,11 +36,11 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: ccc28fdae0d298e40ae80f54ed18b16c, type: 3}
+      value: {fileID: 21300000, guid: ef215a8342a190f46ad3a99da22e1519, type: 3}
     - time: 0.5
-      value: {fileID: 21300000, guid: f1097f0af9f256d419a496fa9bc1de5e, type: 3}
+      value: {fileID: 21300000, guid: 2d6c2811a6189274bbd6fd517d23cd7b, type: 3}
     - time: 1
-      value: {fileID: 21300000, guid: ccc28fdae0d298e40ae80f54ed18b16c, type: 3}
+      value: {fileID: 21300000, guid: ef215a8342a190f46ad3a99da22e1519, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -67,9 +67,9 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: ccc28fdae0d298e40ae80f54ed18b16c, type: 3}
-    - {fileID: 21300000, guid: f1097f0af9f256d419a496fa9bc1de5e, type: 3}
-    - {fileID: 21300000, guid: ccc28fdae0d298e40ae80f54ed18b16c, type: 3}
+    - {fileID: 21300000, guid: ef215a8342a190f46ad3a99da22e1519, type: 3}
+    - {fileID: 21300000, guid: 2d6c2811a6189274bbd6fd517d23cd7b, type: 3}
+    - {fileID: 21300000, guid: ef215a8342a190f46ad3a99da22e1519, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -96,7 +96,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.058608346
+        value: 0.3080372
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -115,7 +115,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.050667148
+        value: 0.31933603
         inSlope: 0
         outSlope: 0
         tangentMode: 136
