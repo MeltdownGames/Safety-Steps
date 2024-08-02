@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -71,10 +69,7 @@ public class Player : MonoBehaviour
 
         foreach (GameObject objOver in objectsOver.ToList())
             if (objOver.gameObject == killObject)
-            {
-                print("Killing from: " + killObject.name); // remove later
                 Kill(killObject.name);
-            }
     }
 
     void CheckFan()

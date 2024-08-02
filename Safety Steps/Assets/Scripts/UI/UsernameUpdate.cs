@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using Firebase.Firestore;
 
 public class UsernameUpdate : MonoBehaviour
 {
